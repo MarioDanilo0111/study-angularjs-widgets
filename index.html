@@ -13,6 +13,14 @@
 
       <input type="text" ng-model="message" placeholder="Type here..." />
       <p>You typed: {{ message }}</p>
+
+      // add name to paragraph message
+      <input type="text" ng-model="form.name" placeholder="Add your name" />
+      <button ng-click="submit()">Submit</button>
+      <p>Hello {{result}}!</p>
+
+
+      <button ng-click="add()" >Click me</button>
+      </html>
     </body>
-  </html>
 </DOCTYPE>
