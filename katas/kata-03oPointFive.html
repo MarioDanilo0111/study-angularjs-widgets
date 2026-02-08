@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="studyApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS 1.2 - Kata 03</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="./../app.js"></script>
+  </head>
+  <body ng-controller="MainCtrl">
+    <h2>Kata 3.5 - The `ng-repeat` Scope Trap</h2>
+    <input type="text" ng-model="sharedValue" placeholder="Shared value" />
+    <p>Outside: {{ sharedValue }}</p>
+    <ul>
+      <li ng-repeat="item in items">
+        <input type="text" ng-model="item.name" />
+        <p>Inside: {{ item.name }}</p>
+      </li>
+    </ul>
+  </body>
+</html>

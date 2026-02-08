@@ -2,9 +2,11 @@ var app = angular.module("studyApp", []);
 
 app.controller("MainCtrl", function ($scope) {
   //list state
-  $scope.items = [];
+  $scope.items = [{ name: "Alice" }, { name: "Bob" }];
+
   // Form state
   $scope.newItem = "";
+
   // Add item
   $scope.addItem = function () {
     if (!$scope.newItem) return;
@@ -28,7 +30,7 @@ app.controller("MainCtrl", function ($scope) {
     name: "",
   };
 
-  //use input->"name" value in Html form
+  //use input-> "name" value in Html form
   $scope.submit = function () {
     if ($scope.form.name === "") return;
 
