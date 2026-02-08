@@ -1,26 +1,27 @@
-<DOCTYPE html>
-  <html ng-app="studyApp">
-    <head>
-      <meta charset="UFT-8" />
-      <title>Angular 1.2 Study Case</title>
+<!doctype html>
+<html ng-app="studyApp">
+  <head>
+    <meta charset="UFT-8" />
+    <title>Angular 1.2 Study Case</title>
 
-      <!-- AngularJS 1.2 -->
-      <script src="https://ajax.googleapis.com/ajax/libs/angular.min.js"></script>
-      <script src="app.js"></script>
-    </head>
-    <body>
-      <h1>Angular 1.2 - Kata 01</h1>
+    <!-- AngularJS 1.2 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
 
-      <input type="text" ng-model="message" placeholder="Type here..." />
-      <p>You typed: {{ message }}</p>
+  <body ng-controller="MainCtrl">
+    <h1>Angular 1.2 - Kata 01</h1>
 
-      // add name to paragraph message
-      <input type="text" ng-model="form.name" placeholder="Add your name" />
-      <button ng-click="submit()">Submit</button>
-      <p>Hello {{result}}!</p>
+    // adding message to the 'output'
+    <input type="text" ng-model="message" placeholder="Type here..." />
+    <button ng-click="add()">Click me</button>
+    // output message
+    <p>You typed: {{ message }}</p>
 
-
-      <button ng-click="add()" >Click me</button>
-      </html>
-    </body>
-</DOCTYPE>
+    // add name to paragraph message
+    <input type="text" ng-model="form.name" placeholder="Add your name" />
+    <button ng-click="submit()">Submit</button>
+    // Returned message
+    <p>Hello {{result}}!</p>
+  </body>
+</html>
