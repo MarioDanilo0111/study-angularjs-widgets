@@ -15,6 +15,8 @@ app.controller("MainCtrl", function ($scope) {
     $scope.newItem = "";
   };
 
+  console.log("items: ", $scope.items);
+
   // Remove item
   $scope.removeItem = function (index) {
     $scope.items.splice(index, 1);
@@ -28,9 +30,9 @@ app.controller("MainCtrl", function ($scope) {
 
   //use input->"name" value in Html form
   $scope.submit = function () {
-    if ($scope.form.name) {
-      $scope.result = "Hello " + $scope.form.name;
-    }
+    if ($scope.form.name === "") return;
+
+    $scope.result = $scope.form.name;
   };
 
   $scope.add = function () {

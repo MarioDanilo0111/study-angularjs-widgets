@@ -5,23 +5,24 @@
     <title>Angular 1.2 Study Case</title>
 
     <!-- AngularJS 1.2 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
     <script src="app.js"></script>
   </head>
 
   <body ng-controller="MainCtrl">
     <h1>Angular 1.2 - Kata 01</h1>
 
-    // adding message to the 'output'
+    <!-- adding message to the 'output' -->
     <input type="text" ng-model="message" placeholder="Type here..." />
+    <!-- output message -->
     <button ng-click="add()">Click me</button>
-    // output message
     <p>You typed: {{ message }}</p>
 
-    // add name to paragraph message
+    <!-- add name to paragraph message -->
     <input type="text" ng-model="form.name" placeholder="Add your name" />
     <button ng-click="submit()">Submit</button>
-    // Returned message
-    <p>Hello {{result}}!</p>
+    <p ng-if="result">Hello {{result}}!</p>
+    <p ng-if="!result">No one to say hello to</p>
+    <!-- Returned message -->
   </body>
 </html>
