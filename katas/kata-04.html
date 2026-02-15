@@ -1,0 +1,28 @@
+<!doctype html>
+<html ng-app="kataApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS - Kata 04</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="./../app.js"></script>
+  </head>
+  <body ng-controller="kataCtrl">
+    <div>
+      <h3>Select VLAN size</h3>
+
+      <select ng-model="selectedVlan">
+        <option ng-repeat="vlan in vlans" value="{{vlan.cidr}}">
+          {{vlan.label}} ({{vlan.cidr}})
+        </option>
+      </select>
+
+      <p>Raw model vlau: {{selectedVlan}}</p>
+      <p>Normalized size: {{normalizedSize}}</p>
+
+      <button ng-click="buildPayload()">Build payload</button>
+
+      <pre>{{payload | json}}</pre>
+    </div>
+  </body>
+</html>
