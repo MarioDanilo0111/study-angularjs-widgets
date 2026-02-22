@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="kataApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Angular Working with state, how weidget fake async behavior</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="./../app.js"></script>
+  </head>
+  <body ng-controller="kataCtrl">
+    <button ng-click="loadItems()">Load Items</button>
+
+    <!-- <p ng-if="state.error">Loading...</p> -->
+
+    <!-- <p ng-if="state.error">Something went wrong</p> -->
+
+    <!-- <p ng-if="!state.loading && items.length === 0 ">No itmes avalible</p> -->
+
+    <ul ng-if="state.success">
+      <li ng-repeat="item in items">{{item.name}}</li>
+    </ul>
+
+    <p ng-model="user.name">{{user.name}}</p>
+    <input ng-model="user.name" />
+
+    <input ng-model="settings.theme" />
+    <pre>{{settings.theme || json}}</pre>
+    <pre>{{items||json}}</pre>
+    <pre>
+      Loading: <strong> {{state.loading}} </strong> - Success: <strong>{{state.success}}</strong> - Items:  <strong> {{items.length}}
+      </strong> 
+    </pre>
+  </body>
+</html>
