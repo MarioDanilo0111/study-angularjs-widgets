@@ -1,0 +1,27 @@
+<!doctype html>
+<html ng-app="kataApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Inconsistent Data Challange</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script src="./../app.js"></script>
+  </head>
+  <body ng-controller="kataCtrl">
+    <h1>The Inconsistent Data Challange</h1>
+    <ul>
+      <li ng-repeat="server in servers">
+        <p>{{server.name}}</p>
+        -
+
+        <span ng-if="server.specs && server.specs.cpu">
+          <h4>CPU</h4>
+          - {{server.specs.cpu}}
+        </span>
+        <span ng-if="server.specs && server.specs.ram">
+          <h4>RAM</h4>
+          - {{server.specs.ram}}
+        </span>
+      </li>
+    </ul>
+  </body>
+</html>

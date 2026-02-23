@@ -65,8 +65,84 @@ app.controller("kataCtrl", function ($scope) {
     },
   };
 
-  console.log("color in theme: ", $scope.settings.color);
-  console.log("user: ", $scope.user);
+  // console.log("color in theme: ", $scope.settings.color);
+  // console.log("user: ", $scope.user);
+
+  $scope.servers = [
+    {
+      name: "Linux Web 1",
+      specs: {
+        cpu: 8,
+        ram: 11,
+      },
+    },
+    {
+      name: "Linux Web 2",
+      // specs: {
+      //   cpu: 6,
+      //   ram: 13,
+      // },
+    },
+    {
+      name: "Database Server",
+      specs: {
+        cpu: 16,
+        // ram: 9,
+      },
+    },
+  ];
+
+  $scope.secondServer = [
+    {
+      specs: {
+        cpu: 9,
+      },
+    },
+  ];
+  $scope.thirdServer = [{ name: "A" }];
+
+  // this evaluation will fail
+  // if($scope.thirdServer[0].specs.cpu){
+  //   console.log("this will fail")
+  // }
+
+  // if statement need to check each step,
+  // if one fails the if exits
+  if (
+    $scope.thirdServer[0] &&
+    $scope.thirdServer[0].specs &&
+    $scope.thirdServer[0].specs.cpu
+  ) {
+    console.log(
+      "This wont fails since it's returning fals and exits if one of the statements is false",
+    );
+  }
+
+  var secondAttempt = $scope.secondServer[0].specs.cpu;
+  console.log("the second Attempt: ", secondAttempt);
+
+  if ($scope.thirdServer[0].specs) {
+    console.log("The name there: ");
+  }
+
+  // duble checks escential if you are diving deeper in the obj
+  // protection in deeper access
+  if ($scope.thirdServer[0] && $scope.thirdServer[0].specs) {
+    console.log($scope.thirdServer[0].specs.cpu);
+  }
+
+  // 'if' to evaluate if first case is true than continue
+  // if case a is not true than do not proced
+  if ($scope.secondServer[0] && $scope.secondServer[0].specs) {
+    console.log("get throw specific id: ", $scope.secondServer[0].specs.cpu);
+  }
+
+  $scope.servers.forEach(function (server) {
+    var cpu = server.specs && server.specs.cpu;
+    var ram = server.specs && server.specs.ram;
+    console.log("Server CPU: ", cpu);
+    console.log("Server Ram: ", ram);
+  });
 });
 
 /* 
